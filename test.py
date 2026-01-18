@@ -2,7 +2,9 @@
 
 #1 определить тип файла который мы будем загружать в тз написано что (CSV;JSON;TXT)
 
-import os 
+import os
+import csv
+import json
 
 
 file = "sdalfghs/asdfwqe/sdfqw/eq\qwerqdssa.txt"
@@ -11,15 +13,36 @@ print(type_file)
 
 #2 выбрать по какому пути мы пойдем после того как опредилим тип файла
 
+def csv_read(filename):
+    with open(filename, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        return list(reader)
+
+def json_read(filename):
+    with open(filename, encoding="utf-8") as f:
+        return json.load(f)
+    
+def txt_read(filename):
+    print(" ")
+
+
 while True:
     if type_file.lower() == ".csv":
         print("дада сюда функцию для сым")
+        date = csv_read(file)
     elif type_file.lower() == ".json":
         print("дада сюда функцию для json")
+        date = json_read(file)
     elif type_file.lower() == ".txt":
         print("дада сюда также ток для тхт")
+        date = txt_read(file)
 
-#3 нам надо написать функции для разных типов файлов 
+
+    else:
+        print("чтото пошло не так!")
+
+
+#3 нам надо написать функции для разных типов файлов выш )
 
 # date = ()
 # kod = str()
@@ -28,7 +51,6 @@ while True:
 # quantity = int()
 # prise = float()
 
-# загружать из файла
 
 # sortirovka Quick Sort
 
@@ -43,3 +65,8 @@ while True:
 
 
 # проверка 
+
+
+# а еще надо написать интерфейс ) сайтик надо выбрать фронт что у нас 
+# будет в фронте надо подумать 
+
