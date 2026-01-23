@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Сохранено</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:linear-gradient(135deg,#bcc7e9,#84dfbe);
+            min-height:100vh;
+            padding:40px;
+        }
+
+        h1{
+            text-align:center;
+            color:#28a4d4;
+        }
+
+        table{
+            width:100%;
+            border-collapse: collapse;
+            background:white;
+            margin-top:25px;
+        }
+
+        th, td{
+            border:1px solid #ddd;
+            padding:10px;
+            text-align:center;
+        }
+
+        th{
+            background:#28a4d4;
+            color:white;
+        }
+
+        tr:nth-child(even){
+            background:#f6f6f6;
+        }
+
+        .btn{
+            display:block;
+            width:200px;
+            margin:30px auto;
+            padding:10px;
+            background:#28a4d4;
+            color:white;
+            text-align:center;
+            text-decoration:none;
+            border-radius:6px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Сохранено в JSON</h1>
+
+<table>
+    <tr>
+        <th>Код</th>
+        <th>Наименование</th>
+        <th>Категория</th>
+        <th>Количество</th>
+        <th>Цена</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row["код"] }}</td>
+        <td>{{ row["наименование"] }}</td>
+        <td>{{ row["категория"] }}</td>
+        <td>{{ row["количество"] }}</td>
+        <td>{{ row["цена"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/" class="btn">Назад</a>
+
+</body>
+</html>
